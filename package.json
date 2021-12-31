@@ -1,0 +1,20 @@
+{
+  "name": "@vue-curd/vue-curd",
+  "version": "1.0.2",
+  "description": "",
+  "private": false,
+  "main": "src/index.js",
+  "author": "tuchongyang",
+  "license": "ISC",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "@vue-curd/vue-curd": "^1.0.2",
+    "element-plus": "^1.2.0-beta.6"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.32"
+  }
+}
