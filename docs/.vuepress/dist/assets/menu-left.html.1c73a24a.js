@@ -1,1 +1,0 @@
-const t={key:"v-131b96b8",path:"/table/slots/menu-left.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:164093765e4,contributors:[{name:"tuchongyang",email:"779311998@qq.com",commits:1}]},filePathRelative:"table/slots/menu-left.md"};export{t as data};
