@@ -26,7 +26,9 @@
                 <el-table-column v-bind="getColumnAttrs(sub)" v-if="!sub.hidden"></el-table-column>
               </template>
             </template>
-            <STableItem :scope="scope" :schema="item" />
+            <STableItem :scope="scope" :schema="item" :isSlot="$slots[item.prop]">
+              <slot :name="item.prop" v-bind="scope"></slot>
+            </STableItem>
           </template>
         </el-table-column>
       </template>

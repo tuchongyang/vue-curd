@@ -1,4 +1,7 @@
-/node_modules
+node_modules
+.cache
+.temp
+dist
 package-lock.json
 docs
 .github

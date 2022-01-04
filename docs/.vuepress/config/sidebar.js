@@ -72,6 +72,10 @@ module.exports = {
         text: "插槽自定义",
         children:[
           {
+            text: "自定义单元格",
+            link: "/table/slots/column.html"
+          },
+          {
             text: "自定义头部",
             link: "/table/slots/header.html"
           },
