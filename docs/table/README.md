@@ -1,7 +1,9 @@
 ## 基础用法
 
+```vue
+<template>
 <CurdTable :data="data" :columns="columns" :page-options="pageOptions" index selection click-row-to-view :fetch-data="fetchData" :fetch-create="fetchCreate" :fetch-edit="fetchEdit" :fetch-remove="fetchRemove" @selectionChange="selectionChange" />
-
+</template>
 <script>
 const columns = [
 {
@@ -266,3 +268,4 @@ export default {
   },
 }
 </script>
+```

@@ -1,11 +1,12 @@
 #### 自定义头部
-
+```vue
+<template>
 <CurdTable :data="data" :columns="columns" :option="option" height="200px">
   <template #nameHeader="scope">
       <el-tag>{{ scope.column }}</el-tag>
   </template>
 </CurdTable>
-
+</template>
 <script setup>
   const data = [
     {
@@ -34,4 +35,4 @@
     menuBtnTitle: "自定义名称",
   }
   </script>
-  
+  ```

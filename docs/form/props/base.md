@@ -1,15 +1,22 @@
 
 Form属性
 
-<CurdTable :data="data" :columns="columns" :option="option"></CurdTable>
+<!-- <CurdTable :data="data" :columns="columns" :option="option"></CurdTable> -->
+<table>
+    <thead>
+        <tr>
+            <td v-for="column in columns" :key="column.prop">{{column.label}}</td>
+        </tr>
+    </thead>
+</table>
 
 FormItem 属性
 
-<CurdTable :data="data1" :columns="columns" :option="option"></CurdTable>
+<!-- <CurdTable :data="data1" :columns="columns" :option="option"></CurdTable> -->
 
 type为file的FormItem 属性
 
-<CurdTable :data="data2" :columns="columns" :option="option"></CurdTable>
+<!-- <CurdTable :data="data2" :columns="columns" :option="option"></CurdTable> -->
 
 
 <script setup>

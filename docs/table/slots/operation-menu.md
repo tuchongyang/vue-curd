@@ -1,5 +1,7 @@
 #### 自定义操作菜单
 
+```vue
+<template>
 <CurdTable :data="data" :columns="columns" :option="option" height="200px">
     <template #menuBtn="scope">
     <el-dropdown-item @click.stop="tip1(scope)">自定义按钮1</el-dropdown-item>
@@ -9,7 +11,7 @@
     <el-button style="margin-left: 10px" type="text" :icon="User" @click.stop="tip3(scope)">自定义按钮</el-button>
     </template>
 </CurdTable>
-
+</template>
 <script setup>
 import { User } from "@element-plus/icons-vue"
 const data = [
@@ -48,3 +50,4 @@ const tip3 = (scope) => {
   console.log("tip3", scope)
 }
 </script>
+```

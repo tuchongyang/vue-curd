@@ -1,10 +1,13 @@
 #### 图片显示与上传
+
+```vue
+<template>
 <CurdTable :data="data" :columns="columns" :option="option" height="200px">
     <template #nameHeader="scope">
     <el-tag>{{ scope }}</el-tag>
     </template>
 </CurdTable>
-
+</template>
 <script setup>
 const data = [
   {
@@ -25,3 +28,5 @@ const option = {
   menuBtnTitle: "自定义名称",
 }
 </script>
+
+```

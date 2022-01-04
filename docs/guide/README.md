@@ -16,7 +16,8 @@ app.use(VueCurd)
 
 ### 表格
 
-详细文档请<router-link to="/table/">前往查看</router-link>
+详细文档请
+<!-- <router-link to="/table/">前往查看</router-link> -->
 
 ``` vue
 <template>
@@ -36,7 +37,8 @@ const data = [
 
 ### 表单
 
-详细文档请<router-link to="/form/">前往查看</router-link>
+详细文档请
+<!-- <router-link to="/form/">前往查看</router-link> -->
 
 ``` vue
 <template>
@@ -57,27 +59,6 @@ const formSchema = ref({
 ```
 
 ### 弹窗表单
-
-<el-button @click="open">弹 出</el-button>
-
-<script setup>
-import { ref,getCurrentInstance } from "vue"
-const instance = getCurrentInstance()
-const formSchema = ref({
-  formItem: [
-    { type: "input", label: "用户名", prop: "username", span: 24 },
-    { type: "input", label: "姓名", prop: "name", span: 24 },
-  ],
-  rules: {
-      username: [{required: true, message:"请输入用户名",trigger: "blur"}]
-  }
-})
-const open = ()=>{
-    instance.appContext.config.globalProperties.$formDialog.show({
-        formSchema: formSchema
-    })
-}
-</script>
 
 ``` vue
 <template>
