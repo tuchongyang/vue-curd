@@ -23,7 +23,13 @@
           <template #default="scope">
             <template v-if="item.children && item.children.length">
               <template v-for="sub in item.children" :key="sub.prop">
-                <el-table-column v-bind="getColumnAttrs(sub)" v-if="!sub.hidden"></el-table-column>
+                <el-table-column v-bind="getColumnAttrs(sub)" v-if="!sub.hidden">
+                  <template #default="scope1">
+                    <STableItem :scope="scope1" :schema="sub" :isSlot="$slots[sub.prop]">
+                      <slot :name="sub.prop" v-bind="scope1"></slot>
+                    </STableItem>
+                  </template>
+                </el-table-column>
               </template>
             </template>
             <STableItem :scope="scope" :schema="item" :isSlot="$slots[item.prop]">
@@ -32,16 +38,16 @@
           </template>
         </el-table-column>
       </template>
-      <el-table-column label="操作" fixed="right" :width="option.menuWidth || '180'" v-if="!option.hideOperation">
+      <el-table-column label="操作" fixed="right" :width="option.operationWidth || '180'" v-if="!option.hideOperation">
         <template #default="scope">
           <template v-if="!$slots.menuBtn">
-            <el-button type="text" @click.stop="create(scope.row)">
+            <el-button type="text" @click.stop="create(scope.row)" v-if="!option.hideOprationEdit">
               <el-icon><Edit /></el-icon> 编辑
             </el-button>
-            <el-button type="text" @click.stop="detail(scope.row)">
+            <el-button type="text" @click.stop="detail(scope.row)" v-if="!option.hideOprationDetail">
               <el-icon><Document /></el-icon> 详情
             </el-button>
-            <el-button type="text" style="color: #ff0000" @click.stop="startremove(scope)">
+            <el-button type="text" style="color: #ff0000" @click.stop="startremove(scope)" v-if="!option.hideOprationDelete">
               <el-icon><Delete /></el-icon> 删除
             </el-button>
           </template>
@@ -52,17 +58,17 @@
             <template #dropdown>
               <el-dropdown-menu>
                 <el-dropdown-item>
-                  <el-button type="text" @click.stop="create(scope.row)">
+                  <el-button type="text" @click.stop="create(scope.row)" v-if="!option.hideOprationEdit">
                     <el-icon><Edit /></el-icon> 编辑
                   </el-button>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <el-button type="text" @click.stop="detail(scope.row)">
+                  <el-button type="text" @click.stop="detail(scope.row)" v-if="!option.hideOprationDetail">
                     <el-icon><Document /></el-icon> 详情
                   </el-button>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <el-button type="text" style="color: #ff0000" @click.stop="startremove(scope)">
+                  <el-button type="text" style="color: #ff0000" @click.stop="startremove(scope)" v-if="!option.hideOprationDelete">
                     <el-icon><Delete /></el-icon> 删除
                   </el-button>
                 </el-dropdown-item>
@@ -188,7 +194,7 @@ const filterSchema = computed(() => {
         continue
       }
       if (a.filter) {
-        const options = a.options || []
+        const options = a.options || a.asyncOptions || []
         !options.some((a) => a.label == "全部") && options.unshift({ label: "全部", value: "" })
         result.push({
           type: a.filter.component || "input",
@@ -270,6 +276,7 @@ const create = (row) => {
       label: a.label,
       prop: a.prop,
       options: a.options,
+      asyncOptions: a.form && a.form.asyncOptions,
       props: a.form && a.form.props,
       value: a.form && a.form.value,
       hidden: a.form && a.form.hidden,
@@ -294,7 +301,7 @@ const create = (row) => {
     formSchema: formSchema,
     fields: row,
     handleOk: async (modelRef) => {
-      const fun = row ? "fetchCreate" : "fetchEdit"
+      const fun = row ? "fetchEdit" : "fetchCreate"
       return await (props[fun] && props[fun](modelRef, row))
     },
   })
@@ -335,6 +342,7 @@ const onRowClick = (row) => {
 const selectionChange = (rows) => {
   emits("selectionChange", rows)
 }
+defineExpose({fetchData})
 </script>
 <style lang="scss">
 .table-container {

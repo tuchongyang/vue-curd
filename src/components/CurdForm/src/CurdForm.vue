@@ -1,5 +1,5 @@
 <template>
-  <el-form ref="schemaFormRef" :model="modelRef" :rules="rulesRef" v-bind="$attrs" class="schema-form" style="display: flex; flex-wrap: wrap; position: relative; box-sizing: border-box" :label-width="formSchema.labelWidth || '110px'">
+  <el-form ref="schemaFormRef" :model="modelRef" :rules="rulesRef" v-bind="$attrs" class="schema-form" style="display: flex; flex-wrap: wrap; position: relative; box-sizing: border-box" :label-width="formSchema.labelWidth">
     <template v-for="formItem in schemaItems" :key="formItem.prop">
       <el-form-item :label="formItem.label" :prop="formItem.prop" :label-width="formItem.labelWidth" :style="{ maxWidth: (100 * formItem.span) / 24 + '%', flex: '0 0 ' + (100 * formItem.span) / 24 + '%' }">
         <component :is="getComponent(formItem.type)" v-model="modelRef[formItem.prop]" :form-item="formItem" />
@@ -50,7 +50,7 @@ export default defineComponent({
     const modelRef = reactive(
       props.formSchema.formItem.reduce((previousValue, currentValue) => {
         currentValue.eventObject ??= {}
-        previousValue[currentValue.prop] = currentValue.value || undefined
+        previousValue[currentValue.prop] = currentValue.value
         return previousValue
       }, {})
     )
@@ -96,7 +96,7 @@ export default defineComponent({
         if (item.hidden instanceof Function) {
           return !item.hidden(modelRef)
         }
-        return item.hidden
+        return !item.hidden
       })
     })
 

@@ -58,7 +58,8 @@ export default defineComponent({
             state.visible = false
           }
         })
-        .catch(() => {
+        .catch((e) => {
+          console.log(e)
           state.confirmLoading = false
         })
     }

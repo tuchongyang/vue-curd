@@ -24,7 +24,7 @@ const list = ref([])
 const open = (option) => {
   list.value = []
   option.columns.forEach((item) => {
-    if (item.childrem && item.children.length) {
+    if (item.children && item.children.length) {
       for (let i in item.children) {
         const a = item.children[i]
         list.value.push({
