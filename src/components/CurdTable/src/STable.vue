@@ -25,14 +25,14 @@
               <template v-for="sub in item.children" :key="sub.prop">
                 <el-table-column v-bind="getColumnAttrs(sub)" v-if="!sub.hidden">
                   <template #default="scope1">
-                    <STableItem :scope="scope1" :schema="sub" :isSlot="$slots[sub.prop]">
+                    <STableItem :scope="scope1" :schema="sub" :isSlot="!!$slots[sub.prop]">
                       <slot :name="sub.prop" v-bind="scope1"></slot>
                     </STableItem>
                   </template>
                 </el-table-column>
               </template>
             </template>
-            <STableItem :scope="scope" :schema="item" :isSlot="$slots[item.prop]">
+            <STableItem :scope="scope" :schema="item" :isSlot="!!$slots[item.prop]">
               <slot :name="item.prop" v-bind="scope"></slot>
             </STableItem>
           </template>
@@ -91,7 +91,7 @@ export default {
 }
 </script>
 <script setup>
-import {  computed, ref, reactive, provide, getCurrentInstance } from "vue"
+import {  computed, ref, reactive, provide, watch,getCurrentInstance } from "vue"
 import STableItem from "./STableItem.vue"
 import STableFilter from "./STableFilter.vue"
 import STableMenu from "./STableMenu.vue"
@@ -158,13 +158,8 @@ const props = defineProps({
   },
 })
 const emits = defineEmits(["selectionChange"])
-const list = computed(() => {
-  const result = props.data.map((item) => {
-    return item
-  })
-
-  return result
-})
+const list = ref(props.data)
+watch(()=>props.data,(val)=>{list.value = val},{deep:true})
 const tableAttrs = ref({})
 const listQuery = reactive({
   pageIndex: 1,
@@ -215,7 +210,6 @@ const onSearch = (params) => {
   for (let i in params) {
     search[i] = params[i]
   }
-  console.log("search", search)
 
   fetchData()
 }
@@ -269,6 +263,7 @@ const create = (row) => {
   const formSchema = {
     formItem: [],
     rules: {},
+    labelWidth: 110
   }
   const setItem = (a) => {
     const item = {
@@ -315,7 +310,7 @@ const startremove = (scope) => {
       confirmButtonText: "确定",
     })
     .then(async () => {
-      await (props.fetchRemove && props.fetchRemove(scope.row))
+      await (props.fetchRemove && props.fetchRemove(scope.row,scope.$index))
       instance.appContext.config.globalProperties.$message({
         type: "success",
         message: "删除成功",

@@ -2,11 +2,12 @@
   <el-form ref="schemaFormRef" :model="modelRef" :rules="rulesRef" v-bind="$attrs" class="schema-form" style="display: flex; flex-wrap: wrap; position: relative; box-sizing: border-box" :label-width="formSchema.labelWidth">
     <template v-for="formItem in schemaItems" :key="formItem.prop">
       <el-form-item :label="formItem.label" :prop="formItem.prop" :label-width="formItem.labelWidth" :style="{ maxWidth: (100 * formItem.span) / 24 + '%', flex: '0 0 ' + (100 * formItem.span) / 24 + '%' }">
-        <component :is="getComponent(formItem.type)" v-model="modelRef[formItem.prop]" :form-item="formItem" />
+        <component v-if="!$slots[formItem.type]" :is="getComponent(formItem.type)" v-model="modelRef[formItem.prop]" :form-item="formItem" :form-model="modelRef"/>
+        <slot :name="formItem.type" :form-item="formItem" :form-model="modelRef"></slot>
       </el-form-item>
     </template>
     <template v-if="$slots['operate-button']">
-      <el-form-item style="max-width: 100%; flex: 0 0 100%">
+      <el-form-item style="max-width: 100%;">
         <slot name="operate-button"></slot>
       </el-form-item>
     </template>
@@ -105,7 +106,7 @@ export default defineComponent({
       return props.formSchema.rules
     })
 
-    const preset = ["input", "select", "radio", "checkbox", "input-number", "input-range", "switch", "file", "input-password", "date-picker", "color-picker", "value"]
+    const preset = ["input", "select", "radio", "checkbox", "input-number", "input-range", "switch", "file", "input-password", "date-picker", "color-picker", "value","cascader"]
 
     // 获取组件名称
     const getComponent = (type) => {

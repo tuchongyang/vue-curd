@@ -17,6 +17,11 @@ export default defineComponent({
       type: Object,
       default: () => ({}),
     },
+    formModel: {
+      // 表单项
+      type: Object,
+      default: null,
+    },
     modelValue: undefined, // 表单项值
   },
   emits: ["update:modelValue"],
@@ -28,14 +33,14 @@ export default defineComponent({
 
     const fileList = ref([])
     const loading = ref(false)
-    const imageUrl = ref("")
+    const imageUrl = ref(props.formItem.url || (props.formItem.getUrl && props.formItem.getUrl(props.formModel,props.formItem)) || model)
     const uploadUrl = props.formItem.action || "#"
-    const headers = { authorization: localStorage.getItem("token") }
+    const headers = props.formItem.headers
     const handleChange = (info) => {
       props.formItem.change && props.formItem.change(info.raw)
     }
     const handleAvatarSuccess = (res, file) => {
-      props.formItem.success && props.formItem.success(res, file)
+      props.formItem.success && props.formItem.success(res, file, model)
     }
 
     const beforeUpload = (file) => {

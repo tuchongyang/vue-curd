@@ -3,7 +3,7 @@
   <template v-if="!props.isSlot">
   <ConstantStatus :value="props.scope.row[props.schema.prop]" v-if="props.schema.options" :options="props.schema.options" />
   <template v-else-if="props.schema.form && props.schema.form.component == 'file'">
-    <el-image :src="props.scope.row[props.schema.prop]" :preview-src-list="[props.scope.row[props.schema.prop]]" style="width: 40px; height: 40px; vertical-align: top" fit="cover"></el-image>
+    <el-image :src="props.scope.row[props.schema.prop]" :preview-src-list="[props.scope.row[props.schema.prop]]" style="width: 40px; height: 40px; vertical-align: top" fit="cover" @click.stop></el-image>
   </template>
   <span v-else>{{ props.scope.row[props.schema.prop] }}</span>
   </template>
