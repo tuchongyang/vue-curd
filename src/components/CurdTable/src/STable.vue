@@ -190,19 +190,20 @@ const filterSchema = computed(() => {
   const result = []
   const getFilter = (columns) => {
     for (const i in columns) {
-      const a = columns[i]
+      const a = deepClone(columns[i])
       if (a.children && a.children.length) {
         getFilter(a.children)
         continue
       }
       if (a.filter) {
-        const options = a.options || a.asyncOptions || []
+        const options = a.options || []
         !options.some((a) => a.label == "全部") && options.unshift({ label: "全部", value: "" })
         result.push({
           type: a.filter.component || "input",
           label: a.label,
           prop: a.prop,
           options: options,
+          asyncOptions: a.asyncOptions
         })
       }
     }
