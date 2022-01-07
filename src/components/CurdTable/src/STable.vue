@@ -44,13 +44,13 @@
       <el-table-column label="操作" fixed="right" :width="option.operationWidth || '180'" v-if="!option.hideOperation">
         <template #default="scope">
           <template v-if="!$slots.operationBtn">
-            <el-button type="text" @click.stop="create(scope.row)" v-if="!option.hideOprationEdit">
+            <el-button type="text" @click.stop="create(scope.row)" v-if="!option.hideOperationEdit">
               <el-icon><Edit /></el-icon> 编辑
             </el-button>
-            <el-button type="text" @click.stop="detail(scope.row)" v-if="!option.hideOprationDetail">
+            <el-button type="text" @click.stop="detail(scope.row)" v-if="!option.hideOperationDetail">
               <el-icon><Document /></el-icon> 详情
             </el-button>
-            <el-button type="text" style="color: #ff0000" @click.stop="startremove(scope)" v-if="!option.hideOprationDelete">
+            <el-button type="text" style="color: #ff0000" @click.stop="startremove(scope)" v-if="!option.hideOperationDelete">
               <el-icon><Delete /></el-icon> 删除
             </el-button>
           </template>
@@ -61,17 +61,17 @@
             <template #dropdown>
               <el-dropdown-menu>
                 <el-dropdown-item>
-                  <el-button type="text" @click.stop="create(scope.row)" v-if="!option.hideOprationEdit">
+                  <el-button type="text" @click.stop="create(scope.row)" v-if="!option.hideOperationEdit">
                     <el-icon><Edit /></el-icon> 编辑
                   </el-button>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <el-button type="text" @click.stop="detail(scope.row)" v-if="!option.hideOprationDetail">
+                  <el-button type="text" @click.stop="detail(scope.row)" v-if="!option.hideOperationDetail">
                     <el-icon><Document /></el-icon> 详情
                   </el-button>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <el-button type="text" style="color: #ff0000" @click.stop="startremove(scope)" v-if="!option.hideOprationDelete">
+                  <el-button type="text" style="color: #ff0000" @click.stop="startremove(scope)" v-if="!option.hideOperationDelete">
                     <el-icon><Delete /></el-icon> 删除
                   </el-button>
                 </el-dropdown-item>
@@ -154,9 +154,9 @@ const props = defineProps({
         hideMenu: false, // 是否隐藏右侧工具菜单
         hideMenuAdd: false,// 是否隐藏菜单中添加按钮
         hideOperation: false, // 是否隐藏操作列
-        hideOprationEdit: false, // 是否隐藏操作列中的编辑按钮
-        hideOprationDetail: false, // 是否隐藏操作列中的详情按钮
-        hideOprationDelete: false, // 是否隐藏操作列中的删除按钮
+        hideOperationEdit: false, // 是否隐藏操作列中的编辑按钮
+        hideOperationDetail: false, // 是否隐藏操作列中的详情按钮
+        hideOperationDelete: false, // 是否隐藏操作列中的删除按钮
         hideMenuAdd: false, // 是否隐藏添加按钮
         hidePage: false, // 是否隐藏分页器
         excelTitle: "", //导出表格的文件名
