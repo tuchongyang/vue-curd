@@ -21,7 +21,7 @@ const data = [
 ]
 const columns = [
   { prop: "name", label: "姓名" },
-  { prop: "img", label: "单图", form: { component: "file" } },
+  { prop: "img", label: "单图", form: { type: "file" } },
 ]
 const option = {
   menuWidth: 200,

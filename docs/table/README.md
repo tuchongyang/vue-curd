@@ -14,34 +14,34 @@ const columns = [
         prop: "name",
         width: 140,
         filter: {
-        component: "input",
+          component: "input",
         },
         form: {
-        rules: [
+          rules: [
             {
-            required: true,
-            trigger: "blur",
-            message: "请输入用户姓名",
+              required: true,
+              trigger: "blur",
+              message: "请输入用户姓名",
             },
-        ],
+          ],
         },
     },
     {
-        label: "登录账号",
-        prop: "account",
-        width: 120,
-        filter: {
+      label: "登录账号",
+      prop: "account",
+      width: 120,
+      filter: {
         component: "input",
-        },
-        form: {
+      },
+      form: {
         rules: [
-            {
+          {
             required: true,
             trigger: "blur",
             message: "请输入登录账号",
-            },
+          },
         ],
-        },
+      },
     },
     ],
 },

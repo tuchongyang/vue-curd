@@ -5,7 +5,7 @@
 
 ```vue
 <template>
-  <curd-form class="center-form" ref="dynamicForm" :fields="fields" :form-schema="formSchema" :label-width="formSchema.labelWidth || '110px'">
+  <curd-form class="center-form" ref="dynamicForm" :fields="fields" :form-schema="formSchema">
     <template v-slot:operate-button>
       <div style="text-align: center">
         <el-button type="primary" @click="submit">提 交</el-button>
@@ -55,6 +55,12 @@ const formSchema = {
       span: 12,
     },
   ],
+  rules:{
+    username:[
+      { required: true, message:"用户名不能为空", trigger: "blur" }
+    ]
+  },
+  labelWidth: 110
 }
 const fields = {}
 const dynamicForm = ref()

@@ -3,13 +3,16 @@
     <STableFilter :schema="filterSchema" @search="onSearch" v-show="filterSchema.formItem.length && filterVisible" />
     <div class="table-control">
       <div class="btn-control">
-        <el-button type="primary" size="mini" @click="create()" v-if="!option.hideBtnAdd">
+        <el-button type="primary" size="mini" @click="create()" v-if="!option.hideMenuAdd">
           <el-icon><plus /></el-icon>
           添加
         </el-button>
         <slot name="menuLeft"></slot>
       </div>
-      <div class="min-control" v-if="!option.hideMenu"><STableMenu :filterVisible="filterVisible" @operation="onMenuOption" /></div>
+      <div class="min-control" v-if="!option.hideMenu">
+        <slot name="menuRight"></slot>
+        <STableMenu :filterVisible="filterVisible" @operation="onMenuOption" />
+      </div>
     </div>
     <el-table id="table" border :data="list" v-loading="loading" v-bind="tableAttrs" @row-click="onRowClick" @selection-change="selectionChange">
       <el-table-column type="index" v-if="$attrs.index !== undefined" />
@@ -40,7 +43,7 @@
       </template>
       <el-table-column label="操作" fixed="right" :width="option.operationWidth || '180'" v-if="!option.hideOperation">
         <template #default="scope">
-          <template v-if="!$slots.menuBtn">
+          <template v-if="!$slots.operationBtn">
             <el-button type="text" @click.stop="create(scope.row)" v-if="!option.hideOprationEdit">
               <el-icon><Edit /></el-icon> 编辑
             </el-button>
@@ -53,7 +56,7 @@
           </template>
           <el-dropdown trigger="click" v-else>
             <el-button type="text">
-              {{ props.option.menuBtnTitle }}<el-icon class="el-icon--right"><arrow-down /></el-icon>
+              {{ props.option.operationBtnTitle }}<el-icon class="el-icon--right"><arrow-down /></el-icon>
             </el-button>
             <template #dropdown>
               <el-dropdown-menu>
@@ -77,11 +80,11 @@
             </template>
           </el-dropdown>
 
-          <slot name="menu" v-bind="scope"></slot>
+          <slot name="operation" v-bind="scope"></slot>
         </template>
       </el-table-column>
     </el-table>
-    <el-pagination v-if="!option.pageHide" class="pagination" background layout="total, sizes, prev, pager, next, jumper" :total="total" v-model:current-page="listQuery.pageIndex" v-model:page-size="listQuery.pageSize" @current-change="fetchData" @size-change="fetchData"> </el-pagination>
+    <el-pagination v-if="!option.hidePage" class="pagination" background layout="total, sizes, prev, pager, next, jumper" :total="total" v-model:current-page="listQuery.pageIndex" v-model:page-size="listQuery.pageSize" @current-change="fetchData" @size-change="fetchData"> </el-pagination>
     <STableDetail ref="STableDetailRef" />
   </div>
 </template>
@@ -147,11 +150,15 @@ const props = defineProps({
     type: Object,
     default() {
       return {
-        optionWidth: 160,
+        operationWidth: 180,
         hideMenu: false, // 是否隐藏右侧工具菜单
+        hideMenuAdd: false,// 是否隐藏菜单中添加按钮
         hideOperation: false, // 是否隐藏操作列
-        hideBtnAdd: false, // 是否隐藏添加按钮
-        pageHide: false, // 是否隐藏分页器
+        hideOprationEdit: false, // 是否隐藏操作列中的编辑按钮
+        hideOprationDetail: false, // 是否隐藏操作列中的详情按钮
+        hideOprationDelete: false, // 是否隐藏操作列中的删除按钮
+        hideMenuAdd: false, // 是否隐藏添加按钮
+        hidePage: false, // 是否隐藏分页器
         excelTitle: "", //导出表格的文件名
       }
     },
@@ -266,20 +273,18 @@ const create = (row) => {
     labelWidth: 110
   }
   const setItem = (a) => {
+    const {rules, ...formProps} = a.form
     const item = {
       type: (a.form && a.form.component) || "input",
       label: a.label,
       prop: a.prop,
       options: a.options,
-      asyncOptions: a.form && a.form.asyncOptions,
-      props: a.form && a.form.props,
-      value: a.form && a.form.value,
-      hidden: a.form && a.form.hidden,
-      span: (a.form && a.form.span) || 12,
+      span: 12,
+      ...formProps
     }
     formSchema.formItem.push(item)
     if (a.form && a.form.rules) {
-      formSchema.rules[a.prop] = a.form.rules
+      formSchema.rules[a.prop] = rules
     }
   }
   columns.value.map((a) => {

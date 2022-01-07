@@ -1,5 +1,5 @@
 
-Form属性
+## Form属性
 
 <!-- <CurdTable :data="data" :columns="columns" :option="option"></CurdTable> -->
 <table>
@@ -8,15 +8,44 @@ Form属性
             <td v-for="column in columns" :key="column.prop">{{column.label}}</td>
         </tr>
     </thead>
+    <tbody>
+        <tr v-for="(item,i) in data" :key="item.prop">
+            <td v-for="column in columns" :key="column.prop">{{item[column.prop]}}</td>
+        </tr>
+    </tbody>
 </table>
 
-FormItem 属性
+## FormItem 属性
 
 <!-- <CurdTable :data="data1" :columns="columns" :option="option"></CurdTable> -->
+<table>
+    <thead>
+        <tr>
+            <td v-for="column in columns" :key="column.prop">{{column.label}}</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="(item,i) in data1" :key="item.prop">
+            <td v-for="column in columns" :key="column.prop">{{item[column.prop]}}</td>
+        </tr>
+    </tbody>
+</table>
 
-type为file的FormItem 属性
+## type为file的FormItem 属性
 
 <!-- <CurdTable :data="data2" :columns="columns" :option="option"></CurdTable> -->
+<table>
+    <thead>
+        <tr>
+            <td v-for="column in columns" :key="column.prop">{{column.label}}</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="(item,i) in data2" :key="item.prop">
+            <td v-for="column in columns" :key="column.prop">{{item[column.prop]}}</td>
+        </tr>
+    </tbody>
+</table>
 
 
 <script setup>
@@ -56,8 +85,11 @@ const data1 = ref([
 // FormItem属性，type为file的额外属性
 const data2 = ref([
     {prop: "action", desc:"上传地址",type: "string",opValue: "--",deValue: "--"},
+    {prop: "url", desc:"初始url",type: "string",opValue: "--",deValue: "--"},
+    {prop: "getUrl", desc:"初始url回调，参数为form，返回值为图片url",type: "(form: FormModel)=> string",opValue: "--",deValue: "--"},
+    {prop: "headers", desc:"上传请求头",type: "object",opValue: "--",deValue: "--"},
     {prop: "maxsize", desc:"文件大小最大值",type: "number",opValue: "--",deValue: "--"},
     {prop: "fileType", desc:"上传的文件类型",type: "string",opValue: "image/video",deValue: "image"},
-    {prop: "success", desc:"上传成功的回调",type: "(res: AxiosResponse,file: File)=>{}",opValue: "--",deValue: "--"}
+    {prop: "success", desc:"上传成功的回调",type: "(res: AxiosResponse,file: File,model:FormModel)=>{}",opValue: "--",deValue: "--"}
 ])
 </script>

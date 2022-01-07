@@ -99,5 +99,14 @@ module.exports = {
           }
         ]
       },
+      {
+        text: "配置",
+        children:[
+          {
+            text: "option配置",
+            link: "/table/props/option.html"
+          }
+        ]
+      },
     ]
   }

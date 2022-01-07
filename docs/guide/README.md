@@ -16,7 +16,7 @@ app.use(VueCurd)
 
 ### 表格
 
-详细文档请
+详细文档请<a href="/vue-curd/table/">前往查看</a>
 <!-- <router-link to="/table/">前往查看</router-link> -->
 
 ``` vue
@@ -37,7 +37,7 @@ const data = [
 
 ### 表单
 
-详细文档请
+详细文档请<a href="/vue-curd/form/">前往查看</a>
 <!-- <router-link to="/form/">前往查看</router-link> -->
 
 ``` vue

@@ -1,5 +1,5 @@
 <template>
-  <el-cascader v-model="model" :options="formItem.options"  v-bind="formItem.props" v-on="formItem.eventObject" :loading="formItem.loading" ></el-cascader>
+  <el-cascader v-model="model" :options="formItem.options"  v-bind="formItem.props" v-on="formItem.eventObject"></el-cascader>
 </template>
 <script>
 import { defineComponent, computed } from "vue"
@@ -8,6 +8,11 @@ export default defineComponent({
   components: {},
   props: {
     formItem: {
+      // 表单项
+      type: Object,
+      default: () => ({}),
+    },
+    formModel: {
       // 表单项
       type: Object,
       default: () => ({}),
