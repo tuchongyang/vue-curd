@@ -291,10 +291,10 @@ const create = (row) => {
   columns.value.map((a) => {
     if (a.children && a.children.length) {
       for (let i in a.children) {
-        setItem(a.children[i])
+        a.children[i].form && setItem(a.children[i])
       }
     } else {
-      setItem(a)
+      a.children[i].form && setItem(a)
     }
   })
   instance.appContext.config.globalProperties.$formDialog.show({
