@@ -294,7 +294,7 @@ const create = (row) => {
         a.children[i].form && setItem(a.children[i])
       }
     } else {
-      a.children[i].form && setItem(a)
+      a.form && setItem(a)
     }
   })
   instance.appContext.config.globalProperties.$formDialog.show({
