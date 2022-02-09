@@ -5,7 +5,7 @@ module.exports = {
         children: [
             {
                 text: "快速上手",
-                link: "/guide/README.md"
+                link: "/guide/"
             }
         ],
       },

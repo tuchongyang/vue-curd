@@ -1,8 +1,8 @@
 
 
 <div class="head">
-    <img src="https://vuejs.org/images/logo.png">
-    <div class="title">EVUE</div>
+    <img :src="$withBase('/logo.png')">
+    <div class="title">vue-curd</div>
     <div class="subtit">前端搬砖神器，贴合企业开发</div>
 </div>
 <div class="control">

@@ -20,9 +20,4 @@ module.exports = [
           }
       ]
     },
-    {
-      text: "GitHub",
-      link: "https://github.com/tuchongyang/vue-curd",
-      target: "_blank"
-    },
 ]
