@@ -3,10 +3,10 @@
 </template>
 <script>
 import { defineComponent, computed } from "vue"
-
+import { ElSwitch } from "element-plus"
 export default defineComponent({
   name: "SchemaFormTextarea",
-  components: {},
+  components: { ElSwitch },
   props: {
     formItem: {
       // 表单项

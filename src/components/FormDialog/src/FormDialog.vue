@@ -13,10 +13,10 @@
 <script>
 import { defineComponent, reactive, toRefs, ref } from "vue"
 import { CurdForm } from "../../CurdForm/src/index.js"
-// import { ElDialog, ElButton } from "element-plus"
+import { ElDialog, ElButton } from "element-plus"
 export default defineComponent({
   name: "FormDialog",
-  components: { CurdForm },
+  components: { CurdForm,ElDialog,ElButton },
   props: {
     title: {
       type: String,

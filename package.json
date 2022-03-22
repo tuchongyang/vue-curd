@@ -1,6 +1,6 @@
 {
   "name": "@vue-curd/vue-curd",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "private": false,
   "main": "src/index.js",

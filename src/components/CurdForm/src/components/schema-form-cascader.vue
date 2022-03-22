@@ -3,9 +3,10 @@
 </template>
 <script>
 import { defineComponent, computed } from "vue"
+import { ElCascader } from "element-plus"
 export default defineComponent({
   name: "SchemaFormSelect",
-  components: {},
+  components: {ElCascader},
   props: {
     formItem: {
       // 表单项

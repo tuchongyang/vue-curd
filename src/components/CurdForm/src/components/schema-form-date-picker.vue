@@ -4,10 +4,10 @@
 </template>
 <script>
 import { defineComponent, computed } from "vue"
-
+import { ElDatePicker } from "element-plus"
 export default defineComponent({
   name: "SchemaFormInput",
-  components: {},
+  components: {ElDatePicker},
   props: {
     formItem: {
       // 表单项

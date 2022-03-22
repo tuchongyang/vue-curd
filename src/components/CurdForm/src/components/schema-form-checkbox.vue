@@ -13,10 +13,10 @@
 <script>
 import { defineComponent, computed } from "vue"
 import { Loading } from "@element-plus/icons-vue"
-
+import { ElCheckbox,ElCheckboxGroup,ElIcon } from "element-plus"
 export default defineComponent({
   name: "SchemaFormCheckbox",
-  components: { Loading },
+  components: { Loading,ElCheckbox,ElCheckboxGroup,ElIcon },
   props: {
     formItem: {
       // 表单项

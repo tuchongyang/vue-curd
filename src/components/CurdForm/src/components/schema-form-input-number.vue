@@ -4,10 +4,10 @@
 
 <script>
 import { defineComponent, computed } from "vue"
-
+import { ElInputNumber } from "element-plus"
 export default defineComponent({
   name: "SchemaFormInputNumber",
-  components: {},
+  components: { ElInputNumber },
   props: {
     formItem: {
       // 表单项

@@ -3,9 +3,8 @@
 </template>
 <script>
 import { defineComponent, computed } from "vue"
-
 export default defineComponent({
-  name: "SchemaFormInput",
+  name: "SchemaFormValue",
   components: {},
   props: {
     formItem: {

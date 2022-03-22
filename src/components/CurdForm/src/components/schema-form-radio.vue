@@ -13,10 +13,10 @@
 <script>
 import { defineComponent, computed } from "vue"
 import { Loading } from "@element-plus/icons-vue"
-
+import { ElIcon, ElRadioGroup, ElRadio } from "element-plus"
 export default defineComponent({
   name: "SchemaFormRadio",
-  components: { Loading },
+  components: { Loading, ElIcon, ElRadioGroup, ElRadio },
   props: {
     formItem: {
       // 表单项

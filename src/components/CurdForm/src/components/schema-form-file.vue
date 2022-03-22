@@ -7,10 +7,10 @@
 <script>
 import { defineComponent, computed, ref } from "vue"
 import { Plus } from "@element-plus/icons-vue"
-
+import { ElUpload, ElIcon } from "element-plus"
 export default defineComponent({
   name: "SchemaFormFile",
-  components: { Plus },
+  components: { Plus, ElUpload, ElIcon },
   props: {
     formItem: {
       // 表单项

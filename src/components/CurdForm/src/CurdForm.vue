@@ -18,11 +18,13 @@
 import { defineComponent, reactive, getCurrentInstance, isReactive, ref, isRef, createVNode, computed, watch, toRefs } from "vue"
 import { isFunction, isAsyncFunction } from "./utils/is"
 import components from "./components"
+import { ElForm, ElFormItem } from "element-plus"
 
 export default defineComponent({
   name: "CurdForm",
   components: {
     ...components,
+    ElForm,ElFormItem
   },
   props: {
     // 动态验证表单

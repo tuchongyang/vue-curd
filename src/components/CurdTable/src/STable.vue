@@ -274,6 +274,7 @@ const create = (row) => {
     labelWidth: 110
   }
   const setItem = (a) => {
+    if(!a.form) return
     const {rules, ...formProps} = a.form
     const item = {
       type: (a.form && a.form.component) || "input",

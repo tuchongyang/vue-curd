@@ -7,9 +7,10 @@
 </template>
 <script>
 import { defineComponent, computed } from "vue"
+import { ElSelect, ElOption } from "element-plus"
 export default defineComponent({
   name: "SchemaFormSelect",
-  components: {},
+  components: { ElSelect, ElOption },
   props: {
     formItem: {
       // 表单项

@@ -3,10 +3,10 @@
 </template>
 <script>
 import { defineComponent, computed } from "vue"
-
+import { ElInput } from "element-plus"
 export default defineComponent({
   name: "SchemaFormInputPassword",
-  components: {},
+  components: {ElInput},
   props: {
     formItem: {
       // 表单项

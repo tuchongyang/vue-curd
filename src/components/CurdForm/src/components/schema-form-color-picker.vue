@@ -3,10 +3,10 @@
 </template>
 <script>
 import { defineComponent, computed } from "vue"
-
+import { ElColorPicker } from "element-plus"
 export default defineComponent({
   name: "SchemaFormInput",
-  components: {},
+  components: {ElColorPicker},
   props: {
     formItem: {
       // 表单项
