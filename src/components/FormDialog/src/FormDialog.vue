@@ -1,5 +1,5 @@
 <template>
-  <el-dialog v-model="visible" v-bind="$attrs" :title="title" width="60%" :before-close="remove">
+  <el-dialog v-model="visible" :title="title" width="60%"  v-bind="$attrs" :before-close="remove">
     <curd-form ref="dynamicForm" :fields="fields" :form-schema="dynamicValidateForm" style="margin: 0 40px 0 20px" />
     <template #footer>
       <span class="dialog-footer">

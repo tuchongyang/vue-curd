@@ -40,9 +40,9 @@ const controlButtons = computed(() => [
     icon: ScaleToOriginal,
     value: "size",
     options: [
-      { label: "默认", value: "small" },
+      { label: "默认", value: "default" },
       { label: "宽松", value: "medium" },
-      { label: "紧凑", value: "mini" },
+      { label: "紧凑", value: "small" },
     ],
   },
   { label: "导出数据", value: "export", icon: Download },

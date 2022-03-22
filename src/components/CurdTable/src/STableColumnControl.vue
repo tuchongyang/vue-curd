@@ -11,7 +11,7 @@
         <template #default="scope">
           <el-button-group>
             <el-tooltip v-for="item in fixedMap" :key="item.value" :content="item.label">
-              <el-button size="mini" @click="selectFixed(scope.row, item.value)" :type="(!scope.row.fixed && item.value == '') || scope.row.fixed == item.value ? 'primary' : ''">
+              <el-button @click="selectFixed(scope.row, item.value)" :type="(!scope.row.fixed && item.value == '') || scope.row.fixed == item.value ? 'primary' : ''">
                 <el-icon><component :is="item.icon" /></el-icon>
               </el-button>
             </el-tooltip>

@@ -3,7 +3,7 @@
     <STableFilter :schema="filterSchema" @search="onSearch" v-show="filterSchema.formItem.length && filterVisible" />
     <div class="table-control">
       <div class="btn-control">
-        <el-button type="primary" size="mini" @click="create()" v-if="!option.hideMenuAdd">
+        <el-button type="primary" @click="create()" v-if="!option.hideMenuAdd">
           <el-icon><plus /></el-icon>
           添加
         </el-button>

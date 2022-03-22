@@ -1,6 +1,6 @@
 <template>
   <div class="table-filter">
-    <CurdForm ref="formSchemaRef" :form-schema="props.schema" inline size="mini">
+    <CurdForm ref="formSchemaRef" :form-schema="props.schema" inline >
       <template #operate-button>
         <el-button type="primary" @click="search" :icon="Search">查询</el-button>
         <el-button type="default" @click="reset">重置</el-button>
