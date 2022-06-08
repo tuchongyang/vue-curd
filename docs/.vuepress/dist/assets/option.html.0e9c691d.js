@@ -1,0 +1,1 @@
+const t={key:"v-f40eb76a",path:"/table/props/option.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1641545667e3,contributors:[{name:"tuchongyang",email:"779311998@qq.com",commits:2}]},filePathRelative:"table/props/option.md"};export{t as data};

@@ -1,0 +1,41 @@
+{
+  "hash": "7bce38cd",
+  "browserHash": "6c95fa8f",
+  "optimized": {
+    "element-plus": {
+      "file": "D:/packages/vue-curd/vue-curd/docs/.vuepress/.cache/element-plus.js",
+      "src": "D:/packages/vue-curd/vue-curd/node_modules/element-plus/es/index.mjs",
+      "needsInterop": false
+    },
+    "element-plus/es/locale/lang/zh-cn.mjs": {
+      "file": "D:/packages/vue-curd/vue-curd/docs/.vuepress/.cache/element-plus_es_locale_lang_zh-cn_mjs.js",
+      "src": "D:/packages/vue-curd/vue-curd/node_modules/element-plus/es/locale/lang/zh-cn.mjs",
+      "needsInterop": false
+    },
+    "vue": {
+      "file": "D:/packages/vue-curd/vue-curd/docs/.vuepress/.cache/vue.js",
+      "src": "D:/packages/vue-curd/vue-curd/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "file": "D:/packages/vue-curd/vue-curd/docs/.vuepress/.cache/vue-router.js",
+      "src": "D:/packages/vue-curd/vue-curd/node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "file": "D:/packages/vue-curd/vue-curd/docs/.vuepress/.cache/@vueuse_core.js",
+      "src": "D:/packages/vue-curd/vue-curd/node_modules/@vueuse/core/index.mjs",
+      "needsInterop": false
+    },
+    "nprogress": {
+      "file": "D:/packages/vue-curd/vue-curd/docs/.vuepress/.cache/nprogress.js",
+      "src": "D:/packages/vue-curd/vue-curd/node_modules/nprogress/nprogress.js",
+      "needsInterop": true
+    },
+    "@vuepress/shared": {
+      "file": "D:/packages/vue-curd/vue-curd/docs/.vuepress/.cache/@vuepress_shared.js",
+      "src": "D:/packages/vue-curd/vue-curd/node_modules/@vuepress/shared/lib/esm/index.js",
+      "needsInterop": false
+    }
+  }
+}

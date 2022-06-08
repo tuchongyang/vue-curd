@@ -1,0 +1,24 @@
+{
+  "name": "@vue-curd/curd-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vue-curd/constant-status": "^2.0.0",
+    "@vue-curd/curd-form": "^2.0.0",
+    "@vue-curd/form-dialog": "^2.0.0",
+    "@vue-curd/table-filter": "^2.0.0",
+    "@vue-curd/utils": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.5",
+    "file-saver": "^2.0.5",
+    "xlsx": "^0.18.5"
+  }
+}
