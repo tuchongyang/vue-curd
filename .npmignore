@@ -18,3 +18,8 @@ vue.config.js
 .browserslistrc
 .prettierignore
 *.map
+.cache
+.temp
+dist
+package-lock.json
+.github

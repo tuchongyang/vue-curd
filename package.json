@@ -1,5 +1,6 @@
 {
   "name": "@vue-curd/vue-curd",
+<<<<<<< HEAD
   "version": "2.0.0",
   "private": false,
   "author": "tuchongyang",
@@ -17,6 +18,17 @@
     "build:lib": "vue-cli-service build --target lib --name index --dest lib packages/index.ts",
     "build:esm-bundle": "rollup --config ./build/rollup.config.js",
     "build:theme": "pnpm run -C packages/theme-chalk build"
+=======
+  "version": "1.0.9",
+  "description": "",
+  "private": false,
+  "main": "src/index.js",
+  "author": "tuchongyang",
+  "license": "ISC",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+>>>>>>> 156ff593a8d95385605dbd398583aa98095b6a2d
   },
   "homepage": "https://github.com/tuchongyang/vue-curd",
   "repository": {
@@ -27,6 +39,7 @@
     "url": "https://github.com/tuchongyang/vue-curd/issues"
   },
   "dependencies": {
+<<<<<<< HEAD
     "element-plus": "^2.2.4",
     "vue": "^3.2.13"
   },
@@ -60,3 +73,14 @@
     "registry": "https://www.npmjs.com/"
   }
 }
+=======
+    "@vue-curd/vue-curd": "^1.0.2",
+    "element-plus": "^1.2.0-beta.6",
+    "file-saver": "^2.0.5",
+    "xlsx": "^0.17.4"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.32"
+  }
+}
+>>>>>>> 156ff593a8d95385605dbd398583aa98095b6a2d

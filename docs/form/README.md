@@ -1,5 +1,6 @@
 ## 基础表单
 
+<<<<<<< HEAD
   <curd-form class="center-form" ref="dynamicForm" :fields="fields" :form-schema="formSchema">
     <template v-slot:operate-button>
       <div style="text-align: center">
@@ -75,6 +76,8 @@ const clear = () => {
 }
 
 </script>
+=======
+>>>>>>> 156ff593a8d95385605dbd398583aa98095b6a2d
 
 
 
