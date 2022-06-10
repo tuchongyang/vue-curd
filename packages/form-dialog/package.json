@@ -19,5 +19,9 @@
     "@vue-curd/utils": "^2.0.0",
     "element-plus": "^2.2.4",
     "vue": "^3.2.37"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "ebf4f70082da90fb332b5f4da9177792d4c95257"
 }
