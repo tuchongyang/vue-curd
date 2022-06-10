@@ -1,6 +1,6 @@
 {
   "name": "@vue-curd/theme-chalk",
-  "version": "0.1.0",
+  "version": "2.0.1",
   "description": "vue-curd component chalk theme.",
   "keywords": [
     "vue-curd",
@@ -29,6 +29,6 @@
     "sucrase": "^3.21.0"
   },
   "dependencies": {
-    "@vue-curd/curd-form": "^2.0.0"
+    "@vue-curd/curd-form": "^2.0.1"
   }
 }
