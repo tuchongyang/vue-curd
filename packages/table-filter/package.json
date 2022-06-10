@@ -6,7 +6,7 @@
   "homepage": "https://github.com/tuchongyang/vue-curd/tree/main/packages/table-filter#readme",
   "license": "ISC",
   "main": "index.ts",
-  "private": "false",
+  "private": false,
   "keywords": [
     "vue",
     "vue3",
