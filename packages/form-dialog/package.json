@@ -6,6 +6,14 @@
   "homepage": "https://github.com/tuchongyang/vue-curd/tree/main/packages/form-dialog#readme",
   "license": "ISC",
   "main": "index.ts",
+  "private": false,
+  "keywords": [
+    "vue",
+    "vue3",
+    "form",
+    "form-dialog",
+    "schema-form"
+  ],
   "dependencies": {
     "@vue-curd/curd-form": "^2.0.1",
     "@vue-curd/utils": "^2.0.1",

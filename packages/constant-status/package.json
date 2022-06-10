@@ -5,8 +5,10 @@
   "author": "tuchongyang <779311998@qq.com>",
   "homepage": "https://github.com/tuchongyang/vue-curd/tree/main/packages/constant-status#readme",
   "license": "ISC",
+  "private": false,
   "main": "index.ts",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "5e4ec87b88b1eef8b00f38ba2b32ba6475d66a83"
 }

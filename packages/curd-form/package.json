@@ -3,6 +3,14 @@
   "version": "2.0.1",
   "license": "ISC",
   "main": "index.ts",
+  "private": false,
+  "keywords": [
+    "vue",
+    "vue3",
+    "form",
+    "curd-form",
+    "schema-form"
+  ],
   "publishConfig": {
     "access": "public"
   },

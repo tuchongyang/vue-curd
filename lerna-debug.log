@@ -1,15 +1,16 @@
 0 silly argv {
-0 silly argv   _: [ 'bootstrap' ],
+0 silly argv   _: [ 'publish' ],
+0 silly argv   composed: 'publish',
 0 silly argv   lernaVersion: '5.0.0',
 0 silly argv   '$0': 'C:\\Users\\test\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js'
 0 silly argv }
 1 notice cli v5.0.0
 2 verbose rootPath D:\packages\vue-curd\vue-curd
-3 error JSONError: Unexpected token "}" (0x7D) in JSON at position 339 while parsing near "...ess\": \"public\"\n  },\n}" in packages\constant-status\package.json
+3 error JSONError: Unexpected token "}" (0x7D) in JSON at position 368 while parsing near "...ue\": \"^3.2.37\"\n  },\n}" in packages\curd-form\package.json
 3 error
-3 error [0m [90m 10 |[39m     [32m"access"[39m[33m:[39m [32m"public"[39m[0m
-3 error [0m [90m 11 |[39m   }[33m,[39m[0m
-3 error [0m[31m[1m>[22m[39m[90m 12 |[39m }[0m
+3 error [0m [90m 20 |[39m     [32m"vue"[39m[33m:[39m [32m"^3.2.37"[39m[0m
+3 error [0m [90m 21 |[39m   }[33m,[39m[0m
+3 error [0m[31m[1m>[22m[39m[90m 22 |[39m }[0m
 3 error [0m [90m    |[39m [31m[1m^[22m[39m[0m
 3 error
 3 error     at parseJson (D:\packages\vue-curd\vue-curd\node_modules\.pnpm\parse-json@5.2.0\node_modules\parse-json\index.js:29:21)
