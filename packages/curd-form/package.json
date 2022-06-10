@@ -1,6 +1,6 @@
 {
   "name": "@vue-curd/curd-form",
-  "version": "2.0.1",
+  "version": "2.0.0",
   "license": "ISC",
   "main": "index.ts",
   "private": false,
@@ -15,7 +15,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@vue-curd/utils": "^2.0.1",
+    "@vue-curd/utils": "^2.0.0",
     "element-plus": "^2.2.4",
     "vue": "^3.2.37"
   }

@@ -1,6 +1,6 @@
 {
   "name": "@vue-curd/form-dialog",
-  "version": "2.0.1",
+  "version": "2.0.0",
   "description": "",
   "author": "tuchongyang <779311998@qq.com>",
   "homepage": "https://github.com/tuchongyang/vue-curd/tree/main/packages/form-dialog#readme",
@@ -15,8 +15,8 @@
     "schema-form"
   ],
   "dependencies": {
-    "@vue-curd/curd-form": "^2.0.1",
-    "@vue-curd/utils": "^2.0.1",
+    "@vue-curd/curd-form": "^2.0.0",
+    "@vue-curd/utils": "^2.0.0",
     "element-plus": "^2.2.4",
     "vue": "^3.2.37"
   }

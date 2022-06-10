@@ -1,6 +1,6 @@
 {
   "name": "@vue-curd/vue-curd",
-  "version": "2.0.1",
+  "version": "2.0.0",
   "description": "A production components library",
   "author": "tuchongyang <779311998@qq.com>",
   "homepage": "https://github.com/tuchongyang/vue-curd/tree/main/packages/vue-curd#readme",
@@ -17,11 +17,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@vue-curd/constant-status": "^2.0.1",
-    "@vue-curd/curd-form": "^2.0.1",
-    "@vue-curd/curd-table": "^2.0.1",
-    "@vue-curd/form-dialog": "^2.0.1",
-    "@vue-curd/table-filter": "^2.0.1"
+    "@vue-curd/constant-status": "^2.0.0",
+    "@vue-curd/curd-form": "^2.0.0",
+    "@vue-curd/curd-table": "^2.0.0",
+    "@vue-curd/form-dialog": "^2.0.0",
+    "@vue-curd/table-filter": "^2.0.0"
   },
   "gitHead": "5e4ec87b88b1eef8b00f38ba2b32ba6475d66a83"
 }
