@@ -4,7 +4,7 @@ specifiers:
   element-plus: ^2.2.4
 
 dependencies:
-  element-plus: 2.2.4
+  element-plus: 2.2.5
 
 packages:
 
@@ -85,8 +85,8 @@ packages:
     resolution: {integrity: sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==}
     dev: false
 
-  /element-plus/2.2.4:
-    resolution: {integrity: sha512-jktZr0o3ARDxWNWPEaJZQm2BN7thTpQl0aIfCUo5eB5m+zEap2DEcojyGKMHSQsCULcPM32NFfu2sHlhbhOiGA==}
+  /element-plus/2.2.5:
+    resolution: {integrity: sha512-Kl0yn/PQca5YQo3M3NPBP4Xl71NQuMtDx5zNXZGVyl5FjdMujXiFB9SXKYGDUCgFU3d/Rl14vB4Fpmcl2Iz+Hw==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:

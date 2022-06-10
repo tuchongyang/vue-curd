@@ -4,10 +4,10 @@
   "private": false,
   "author": "tuchongyang",
   "license": "ISC",
-  "main": "lib/index.common.js",
+  "main": "packages/index.ts",
   "module": "lib/index.esm.js",
   "typings": "lib/index.d.ts",
-  "keyword": "vue3 vue-curd table form",
+  "keyword": "vue3 vue-curd table form table-filter",
   "scripts": {
     "serve": "vue-cli-service serve",
     "bootstrap": "lerna bootstrap",

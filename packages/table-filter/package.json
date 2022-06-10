@@ -5,19 +5,9 @@
   "author": "tuchongyang <779311998@qq.com>",
   "homepage": "https://github.com/tuchongyang/vue-curd/tree/main/packages/table-filter#readme",
   "license": "ISC",
-  "main": "lib/table-filter.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
+  "main": "index.ts",
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
     "@vue-curd/curd-form": "^2.0.0",
